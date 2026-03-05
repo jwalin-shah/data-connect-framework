@@ -1,6 +1,7 @@
-# Data Connect Framework (Public Template)
+# Personal Data Engine (Data Connect Framework) (Public Template)
 
-This repo is a framework-only template with no personal data.
+This repository contains the public, privacy-safe framework for the Personal Data Engine: schema-driven ingestion, normalization, canonical entity modeling, and export lanes across heterogeneous personal datasets.
+
 It intentionally excludes runtime databases, exported archives, logs, and private account artifacts.
 
 ## Safe By Default
