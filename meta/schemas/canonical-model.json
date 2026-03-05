@@ -1,0 +1,75 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical data contract for the personal meta layer.",
+  "layers": {
+    "raw": "Immutable source artifacts as originally exported or downloaded.",
+    "working": "Temporary extracted files and parser intermediates.",
+    "normalized": "Source-shaped JSONL records mapped by connector or importer.",
+    "canonical": "Cross-source NDJSON records for artifacts, entities, events, and relationships.",
+    "views": "App-facing derived records designed for user comprehension."
+  },
+  "canonical_records": {
+    "artifacts": {
+      "description": "Source files or archives used to derive downstream records.",
+      "required_fields": [
+        "id",
+        "type",
+        "artifact_type",
+        "source_file"
+      ]
+    },
+    "entities": {
+      "description": "Durable nouns such as people, accounts, conversations, channels, tracks, videos, playlists, and documents.",
+      "required_fields": [
+        "id",
+        "type",
+        "entity_type",
+        "canonical_name"
+      ],
+      "recommended_fields": [
+        "platform",
+        "attributes",
+        "first_seen_at",
+        "last_seen_at"
+      ]
+    },
+    "events": {
+      "description": "Time-based actions such as watched_video, searched, sent_message, playlist_track, or viewed_post.",
+      "required_fields": [
+        "id",
+        "type",
+        "event_type"
+      ],
+      "recommended_fields": [
+        "occurred_at",
+        "title",
+        "description",
+        "platform",
+        "source_file",
+        "raw_payload"
+      ]
+    },
+    "relationships": {
+      "description": "Edges between canonical entities and events.",
+      "required_fields": [
+        "id",
+        "type",
+        "predicate",
+        "subject_entity_id",
+        "object_entity_id"
+      ],
+      "recommended_fields": [
+        "valid_from",
+        "valid_to",
+        "raw_payload"
+      ]
+    }
+  },
+  "identity_principles": [
+    "Keep raw source data immutable.",
+    "Preserve provenance on every canonical record.",
+    "Separate observed facts from derived inferences.",
+    "Treat identity as time-aware rather than static.",
+    "Design views for user comprehension, not source fidelity."
+  ]
+}

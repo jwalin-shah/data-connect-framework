@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.your-username.meta-email-ingest</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/env</string>
+    <string>bash</string>
+    <string>-lc</string>
+    <string>export EMAIL_APP_PASSWORD='REPLACE_ME'; /usr/bin/python3 /path/to/data-connect/meta/scripts/email_link_ingest.py --imap-user 'REPLACE_EMAIL' --loop --poll-interval 120 --unzip-attachments</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/path/to/data-connect/meta/manifests/email-ingest.stdout.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/path/to/data-connect/meta/manifests/email-ingest.stderr.log</string>
+</dict>
+</plist>

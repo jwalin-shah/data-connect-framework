@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+
+# Env/secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Data artifacts (never commit personal data)
+*.db
+*.db-shm
+*.db-wal
+meta/raw/**
+meta/normalized/**
+meta/canonical/**
+meta/working/**
+meta/views/**
+meta/lanes/**
+runtime/state/**
+runtime/logs/**
+runtime/indexes/**
+personal-server/data/**
+personal-server/logs/**
+
+# Keep scaffold placeholders
+!meta/manifests/.gitkeep
+!meta/views/.gitkeep
+!runtime/logs/.gitkeep
+!personal-server/data/.gitkeep

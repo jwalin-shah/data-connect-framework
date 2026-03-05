@@ -1,0 +1,84 @@
+{
+  "version": "1.0.0",
+  "description": "User-facing derived model for the future app.",
+  "views": {
+    "timeline": {
+      "description": "Chronological activity stream across sources.",
+      "source_records": [
+        "events",
+        "artifacts"
+      ],
+      "fields": [
+        "id",
+        "occurred_at",
+        "event_type",
+        "title",
+        "description",
+        "platform",
+        "source_file"
+      ]
+    },
+    "interests": {
+      "description": "Aggregated topics, channels, artists, and recurring themes.",
+      "source_records": [
+        "events",
+        "entities"
+      ],
+      "fields": [
+        "id",
+        "label",
+        "category",
+        "evidence_count",
+        "first_seen_at",
+        "last_seen_at",
+        "top_sources"
+      ]
+    },
+    "people_graph": {
+      "description": "Important people, accounts, and relationship strength.",
+      "source_records": [
+        "entities",
+        "relationships",
+        "events"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "kind",
+        "strength",
+        "first_seen_at",
+        "last_seen_at",
+        "evidence"
+      ]
+    },
+    "projects": {
+      "description": "Recurring workstreams and documents inferred from conversations, repos, and docs.",
+      "source_records": [
+        "entities",
+        "events"
+      ],
+      "fields": [
+        "id",
+        "name",
+        "status",
+        "signals",
+        "last_active_at"
+      ]
+    },
+    "source_overview": {
+      "description": "Per-source health, coverage, freshness, and known data quality issues.",
+      "source_records": [
+        "artifacts",
+        "events"
+      ],
+      "fields": [
+        "source",
+        "artifact_count",
+        "event_count",
+        "last_imported_at",
+        "health",
+        "known_issues"
+      ]
+    }
+  }
+}
